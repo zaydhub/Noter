@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Noter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- HOME SCREEN -->
+        <main class="screen active" id="screen-home">
+            <header class="top-bar">
+                <div class="logo">
+                    <div class="logo-icon"><i data-lucide="edit-3"></i></div>
+                    <h1>Noter</h1>
+                </div>
+                <button class="icon-btn nav-link" data-target="screen-search"><i data-lucide="search"></i></button>
+            </header>
+            <section class="greeting">
+                <p class="date" id="current-date">Monday, September 23</p>
+                <h2 id="greeting-text">Good morning, Zayd</h2>
+                <p class="subtitle">Capture your thoughts. Stay organized.</p>
+            </section>
+            <section class="categories" id="home-categories-grid">
+                <!-- Injected via JS -->
+            </section>
+            <section class="recent-notes">
+                <div class="section-header">
+                    <h3>Recent notes</h3>
+                    <a href="#" class="see-all nav-link" data-target="screen-search">See all</a>
+                </div>
+                <div id="recent-notes-list">
+                    <!-- Injected via JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- SEARCH SCREEN -->
+        <main class="screen" id="screen-search">
+            <header class="top-bar">
+                <button class="icon-btn nav-link" data-target="screen-home"><i data-lucide="chevron-left"></i></button>
+                <h2>Search</h2>
+                <div style="width: 24px;"></div>
+            </header>
+            <div class="search-container">
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="search-input" placeholder="Search notes, ideas, tasks...">
+                </div>
+            </div>
+            <div class="search-results" id="search-results-list">
+                <!-- Injected via JS -->
+            </div>
+        </main>
+
+        <!-- CATEGORIES SCREEN -->
+        <main class="screen" id="screen-categories">
+            <header class="top-bar">
+                <button class="icon-btn nav-link" data-target="screen-home"><i data-lucide="chevron-left"></i></button>
+                <h2>Categories</h2>
+                <button class="icon-btn action-text">Edit</button>
+            </header>
+            <div class="categories-list-container" id="categories-list-full">
+                <!-- Injected via JS -->
+            </div>
+        </main>
+
+        <!-- MORE SCREEN (Placeholder to prevent crashes) -->
+        <main class="screen" id="screen-more">
+            <header class="top-bar">
+                <h2>Settings</h2>
+                <div style="width: 24px;"></div>
+            </header>
+            <div style="padding: 24px; text-align: center; color: var(--text-secondary);">
+                <i data-lucide="settings" style="width: 48px; height: 48px; margin-bottom: 16px;"></i>
+                <p>Settings & More features coming soon.</p>
+            </div>
+        </main>
+
+        <!-- NEW NOTE SCREEN -->
+        <main class="screen" id="screen-new">
+            <header class="top-bar">
+                <h2>New note</h2>
+                <button class="icon-btn nav-link" data-target="screen-home"><i data-lucide="x"></i></button>
+            </header>
+            <div class="form-container">
+                <input type="text" id="note-title" class="note-input-title" placeholder="Quick thought...">
+                <h3 class="input-label">Category</h3>
+                <div class="category-selector" id="category-selector">
+                    <!-- Injected via JS -->
+                </div>
+                <textarea id="note-content" class="note-input-content" placeholder="Write your note..."></textarea>
+                <button id="save-note-btn" class="save-btn">Save</button>
+            </div>
+        </main>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active nav-link" data-target="screen-home">
+                <i data-lucide="home"></i><span>Home</span>
+            </a>
+            <a href="#" class="nav-item nav-link" data-target="screen-search">
+                <i data-lucide="search"></i><span>Search</span>
+            </a>
+            <div class="nav-item create-btn-wrapper nav-link" data-target="screen-new">
+                <button class="create-btn"><i data-lucide="plus"></i></button>
+            </div>
+            <a href="#" class="nav-item nav-link" data-target="screen-categories">
+                <i data-lucide="layout-grid"></i><span>Categories</span>
+            </a>
+            <a href="#" class="nav-item nav-link" data-target="screen-more">
+                <i data-lucide="more-horizontal"></i><span>More</span>
+            </a>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
